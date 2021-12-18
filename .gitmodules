@@ -1,0 +1,9 @@
+[submodule "TDSL"]
+	path = References\TDSL
+	url = https://github.com/HagarMeir/transactionLib.git
+[submodule "TL2"]
+	path = References\Tl2
+	url = https://github.com/ccaominh/tl2-x86.git
+[submodule "TLDS"]
+	path = References\TLDS
+	url = https://github.com/ucf-cs/tlds.git
