@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{b9c5770d-ec3f-401b-9d0a-e58523a59a44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{c163aa13-9a2b-4fdd-aea1-47bb510ce884}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{816043c6-c2a7-4c71-8c71-d70e3b6f2571}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Platform">
+      <UniqueIdentifier>{b78bcc03-8c4f-42cc-8a0a-bf80e2cd9337}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Interface">
+      <UniqueIdentifier>{7beff9c7-3c83-4ea7-bec1-e30d41392268}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Synchronization">
+      <UniqueIdentifier>{31cefa79-1959-4400-8720-a4b2845b07b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Synchronization">
+      <UniqueIdentifier>{58408823-c76e-4ca2-821a-f74cccb38986}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Transaction">
+      <UniqueIdentifier>{b8e56b2b-066b-444b-8a80-f9cb2d230b5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Transaction">
+      <UniqueIdentifier>{a8662292-4bfc-4794-8b5a-392f66335279}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="NonCopyable.hpp">
+      <Filter>Header Files\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="Trace.hpp">
+      <Filter>Header Files\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="TixellInfra.hpp">
+      <Filter>Header Files\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalVersionClock.hpp">
+      <Filter>Header Files\Synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="Assert.hpp">
+      <Filter>Header Files\Platform</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GlobalVersionClock.cpp">
+      <Filter>Source Files\Synchronization</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
