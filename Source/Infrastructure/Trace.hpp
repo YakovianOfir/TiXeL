@@ -25,39 +25,65 @@
 //
 /////////////////////////////////////////////////////////////////
 
-#ifdef _DEBUG
-
+#include <sstream>
 #include <iostream>
 #include <thread>
 #include <string>
 #include <fmt\core.h>
+#include <fmt\format.h>
 
 namespace Tixel::Infra
 {
+	extern bool TroubleshootMode;
+
+	enum class TraceLevel
+	{
+		Information = 0,
+		Warning = 1,
+		Error = 2,
+		Verbose = 3
+	};
+
+	void EnableTroubleshootMode();
+
+	std::string TraceLevelToString(const TraceLevel& level);
+
 	template<typename... TArgs>
 	void TraceMessage(
-		const std::string& level,
+		const TraceLevel& level,
 		const std::string& function,
 		const std::string& format,
-		const TArgs&... args)
+		const TArgs&... args) noexcept
 	{
 		try
 		{
-			std::cout << "[TiXeL] [" << level << "] (T: ["
-				<< std::this_thread::get_id() << "]) "
-				<< function << "(): "
-				<< fmt::format(format, args...)
-				<< std::endl;
+			if (!TroubleshootMode && level == TraceLevel::Verbose)
+			{
+				return;
+			}
+
+			std::ostringstream os;
+
+			os << "[TiXeL] ["
+			   << TraceLevelToString(level)
+			   << "] (T: [" << std::this_thread::get_id() << "]) "
+			   << function << "(): "
+			   << fmt::format(format, args...)
+			   << std::endl;
+
+			std::cout << os.str();
 		}
 		catch (...)
 		{}
 	}
 }
 
-#define TRACE_INF(__Format, ...) Tixel::Infra::TraceMessage("INF", __FUNCTION__, __Format, ##__VA_ARGS__)
-#define TRACE_ERR(__Format, ...) Tixel::Infra::TraceMessage("ERR", __FUNCTION__, __Format, ##__VA_ARGS__)
-#define TRACE_WRN(__Format, ...) Tixel::Infra::TraceMessage("WRN", __FUNCTION__, __Format, ##__VA_ARGS__)
-#define TRACE_VRB(__Format, ...) Tixel::Infra::TraceMessage("VRB", __FUNCTION__, __Format, ##__VA_ARGS__)
+#ifdef _DEBUG
+
+#define TRACE_INF(__Format, ...) Tixel::Infra::TraceMessage(Tixel::Infra::TraceLevel::Information, __FUNCTION__, __Format, ##__VA_ARGS__)
+#define TRACE_ERR(__Format, ...) Tixel::Infra::TraceMessage(Tixel::Infra::TraceLevel::Error, __FUNCTION__, __Format, ##__VA_ARGS__)
+#define TRACE_WRN(__Format, ...) Tixel::Infra::TraceMessage(Tixel::Infra::TraceLevel::Warning, __FUNCTION__, __Format, ##__VA_ARGS__)
+#define TRACE_VRB(__Format, ...) Tixel::Infra::TraceMessage(Tixel::Infra::TraceLevel::Verbose, __FUNCTION__, __Format, ##__VA_ARGS__)
 #define DEBUG_ONLY(__Expression) __Expression
 
 #else

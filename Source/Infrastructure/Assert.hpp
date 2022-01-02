@@ -8,10 +8,6 @@
 //
 //      | Assert.hpp |
 //
-//   Abstract:
-//
-//		|
-//
 //   Author:
 //
 //      | Ofir Yakovian (@ofirkov) |
