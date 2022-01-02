@@ -7,10 +7,10 @@
 
 enum ReturnValues : int32_t
 {
-	RvSuccess = 0,
-	RvInvalidCmdLine = -1,
-	RvGeneralFault = -2,
-	RvCriticalFault = -3
+    RvSuccess = 0,
+    RvInvalidCmdLine = -1,
+    RvGeneralFault = -2,
+    RvCriticalFault = -3
 };
 
 void ThreadRoutine(const Tixel::Txn::TransactionRoutine& routine)
@@ -18,7 +18,7 @@ void ThreadRoutine(const Tixel::Txn::TransactionRoutine& routine)
     Tixel::Txn::TransactionDispatcher<int, int>::Dispatch(routine);
 }
 
-int wmain(const int argc, wchar_t const * const argv[])
+int wmain(const int argc, wchar_t const* const argv[])
 {
     try
     {

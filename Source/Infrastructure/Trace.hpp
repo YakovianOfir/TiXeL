@@ -10,10 +10,10 @@
 //
 //   Abstract:
 //
-//		| Destines a formatted message to the System debugging port,
-//		| automatically displayed in the Debugger Command window on
-//		| the host computer. Generally, messages sent to this port
-//		| might not arrive under Global Flags prohibition.
+//      | Destines a formatted message to the System debugging port,
+//      | automatically displayed in the Debugger Command window on
+//      | the host computer. Generally, messages sent to this port
+//      | might not arrive under Global Flags prohibition.
 //
 //   Author:
 //
@@ -21,7 +21,7 @@
 //
 //   Environment:
 //
-//		| User Mode |
+//      | User Mode |
 //
 /////////////////////////////////////////////////////////////////
 
@@ -34,48 +34,48 @@
 
 namespace Tixel::Infra
 {
-	extern bool TroubleshootMode;
+    extern bool TroubleshootMode;
 
-	enum class TraceLevel
-	{
-		Information = 0,
-		Warning = 1,
-		Error = 2,
-		Verbose = 3
-	};
+    enum class TraceLevel
+    {
+        Information = 0,
+        Warning = 1,
+        Error = 2,
+        Verbose = 3
+    };
 
-	void EnableTroubleshootMode();
+    void EnableTroubleshootMode();
 
-	std::string TraceLevelToString(const TraceLevel& level);
+    std::string TraceLevelToString(const TraceLevel& level);
 
-	template<typename... TArgs>
-	void TraceMessage(
-		const TraceLevel& level,
-		const std::string& function,
-		const std::string& format,
-		const TArgs&... args) noexcept
-	{
-		try
-		{
-			if (!TroubleshootMode && level == TraceLevel::Verbose)
-			{
-				return;
-			}
+    template<typename... TArgs>
+    void TraceMessage(
+        const TraceLevel& level,
+        const std::string& function,
+        const std::string& format,
+        const TArgs&... args) noexcept
+    {
+        try
+        {
+            if (!TroubleshootMode && level == TraceLevel::Verbose)
+            {
+                return;
+            }
 
-			std::ostringstream os;
+            std::ostringstream os;
 
-			os << "[TiXeL] ["
-			   << TraceLevelToString(level)
-			   << "] (T: [" << std::this_thread::get_id() << "]) "
-			   << function << "(): "
-			   << fmt::format(format, args...)
-			   << std::endl;
+            os << "[TiXeL] ["
+                << TraceLevelToString(level)
+                << "] (T: [" << std::this_thread::get_id() << "]) "
+                << function << "(): "
+                << fmt::format(format, args...)
+                << std::endl;
 
-			std::cout << os.str();
-		}
-		catch (...)
-		{}
-	}
+            std::cout << os.str();
+        }
+        catch (...)
+        {}
+    }
 }
 
 #ifdef _DEBUG

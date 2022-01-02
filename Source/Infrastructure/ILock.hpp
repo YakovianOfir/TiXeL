@@ -10,7 +10,7 @@
 //
 //   Abstract:
 //
-//		| Interface representing synchronization objects. |
+//      | Interface representing synchronization objects. |
 //
 //   Author:
 //
@@ -18,7 +18,7 @@
 //
 //   Environment:
 //
-//		| User Mode |
+//      | User Mode |
 //
 /////////////////////////////////////////////////////////////////
 
@@ -26,12 +26,12 @@
 
 namespace Tixel::Infra
 {
-	class ILock : public NonCopyable
-	{
-		public:
-			virtual bool TryAcquire() = 0;
-			virtual void Acquire() = 0;
-			virtual void Release() = 0;
-			virtual ~ILock() = default;
-	};
+    class ILock : public NonCopyable
+    {
+        public:
+            virtual bool TryAcquire() = 0;
+            virtual void Acquire() = 0;
+            virtual void Release() = 0;
+            virtual ~ILock() = default;
+    };
 }

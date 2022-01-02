@@ -41,9 +41,9 @@
 #define __SLD_P(args,...)
 #define __SLD_(b)
 
-// #pragma warning (push)
-// #pragma warning (disable: 4267)
-// #pragma warning (disable: 4244)
+ // #pragma warning (push)
+ // #pragma warning (disable: 4267)
+ // #pragma warning (disable: 4244)
 
 #ifdef __SL_DEBUG
 #ifndef __cplusplus

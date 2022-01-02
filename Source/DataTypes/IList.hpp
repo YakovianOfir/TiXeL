@@ -14,7 +14,7 @@
 //
 //   Environment:
 //
-//		| User Mode |
+//      | User Mode |
 //
 /////////////////////////////////////////////////////////////////
 
@@ -25,13 +25,13 @@ namespace Tixel::Adt
     template <typename TKey, typename TValue>
     class IList : public Infra::NonCopyable
     {
-	    public:
-	        virtual ~IList() = default;
+        public:
+            virtual ~IList() = default;
 
-	    public:
-	        virtual std::optional<TValue> Get(const TKey& key) const = 0;
-	        virtual std::optional<TValue> Remove(const TKey& key) = 0;
-	        virtual void Insert(const TKey& key, const TValue& value) = 0;
-	        virtual bool Contains(const TKey& key) const = 0;
+        public:
+            virtual std::optional<TValue> Get(const TKey& key) const = 0;
+            virtual std::optional<TValue> Remove(const TKey& key) = 0;
+            virtual void Insert(const TKey& key, const TValue& value) = 0;
+            virtual bool Contains(const TKey& key) const = 0;
     };
 }

@@ -14,7 +14,7 @@
 //
 //   Environment:
 //
-//		| User Mode |
+//      | User Mode |
 //
 /////////////////////////////////////////////////////////////////
 
@@ -29,38 +29,38 @@ namespace Tixel::Adt
     template <typename TKey, typename TValue>
     class IndexNode final : public Infra::VersionLock
     {
-		public:
-    		using Guard = std::shared_ptr<IndexNode>;
+        public:
+            using Guard = std::shared_ptr<IndexNode>;
 
-	    public:
-            explicit IndexNode():
-				_key {},
-				_value {},
-				_next()
-    		{}
+        public:
+            explicit IndexNode() :
+                _key{},
+                _value{},
+                _next()
+            {}
 
-            explicit IndexNode(const TKey& key, const TValue& value, Guard next):
+            explicit IndexNode(const TKey& key, const TValue& value, Guard next) :
                 _key(key),
                 _value(value),
-				_next(next)
-    		{}
+                _next(next)
+            {}
 
             virtual ~IndexNode()
             {
                 PROTECT_DESTRUCTOR(
-                {
-					TIXEL_ASSERT(!IsLocked());
-                })
+                    {
+                        TIXEL_ASSERT(!IsLocked());
+                    })
             }
 
-			std::string ToString()
-			{
-				return fmt::format("[{}] [{}:{}] --> [{}]", fmt::ptr(this), _key, _value, fmt::ptr(_next.get()));
-			}
+            std::string ToString()
+            {
+                return fmt::format("[{}] [{}:{}] --> [{}]", fmt::ptr(this), _key, _value, fmt::ptr(_next.get()));
+            }
 
-		public:
-	        TKey _key;
-	        TValue _value;
+        public:
+            TKey _key;
+            TValue _value;
             Guard _next;
     };
 }

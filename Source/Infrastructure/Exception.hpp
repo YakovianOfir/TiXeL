@@ -14,7 +14,7 @@
 //
 //   Environment:
 //
-//		| User Mode |
+//      | User Mode |
 //
 /////////////////////////////////////////////////////////////////
 
@@ -24,20 +24,18 @@
 
 namespace Tixel::Infra
 {
-	class CmdLineException final : public std::invalid_argument
-	{
-		public:
-			explicit CmdLineException(const std::string& message);
-	};
+    class CmdLineException final : public std::invalid_argument
+    {
+    public:
+        explicit CmdLineException(const std::string& message);
+    };
 
-	class TransactionException final : public std::runtime_error
-	{
-		public:
-			explicit TransactionException();
-			explicit TransactionException(const std::string& message);
-	};
+    class TransactionException final : public std::runtime_error
+    {
+    public:
+        explicit TransactionException(const std::string& message);
+    };
 
-	void ROLLBACK_TXN(bool condition, const std::string& message);
-	void CHECK_CMDLINE(bool condition, const std::string& message);
-	void ROLLBACK_TXN(bool condition);
+    void ROLLBACK_TXN(bool condition, const std::string& message);
+    void CHECK_CMDLINE(bool condition, const std::string& message);
 }

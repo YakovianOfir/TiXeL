@@ -14,7 +14,7 @@
 //
 //   Environment:
 //
-//		| User Mode |
+//      | User Mode |
 //
 /////////////////////////////////////////////////////////////////
 
@@ -23,72 +23,72 @@
 
 namespace Tixel::Txn
 {
-	template <typename TKey, typename TValue>
-	class TxnListTransaction;
+    template <typename TKey, typename TValue>
+    class TxnListTransaction;
 
-	template <typename TKey, typename TValue>
-	class TransactionDispatcher final : public Infra::NonCopyable
-	{
-		public:
-			explicit TransactionDispatcher() = delete;
+    template <typename TKey, typename TValue>
+    class TransactionDispatcher final : public Infra::NonCopyable
+    {
+        public:
+            explicit TransactionDispatcher() = delete;
 
-		private:
-			friend class TxnListTransaction<TKey, TValue>;
-			using Transaction = TxnListTransaction<TKey, TValue>;
+        private:
+            friend class TxnListTransaction<TKey, TValue>;
+            using Transaction = TxnListTransaction<TKey, TValue>;
 
-		public:
-			static void Dispatch(const TransactionRoutine& txnRoutine);
+        public:
+            static void Dispatch(const TransactionRoutine& txnRoutine);
 
-		private:
-			static bool TryDispatch(const TransactionRoutine& txnRoutine);
-	};
+        private:
+            static bool TryDispatch(const TransactionRoutine& txnRoutine);
+    };
 
-	template <typename TKey, typename TValue>
-	void TransactionDispatcher<TKey, TValue>::Dispatch(const TransactionRoutine& txnRoutine)
-	{
-		while (!TryDispatch(txnRoutine)) {}
-	}
+    template <typename TKey, typename TValue>
+    void TransactionDispatcher<TKey, TValue>::Dispatch(const TransactionRoutine& txnRoutine)
+    {
+        while (!TryDispatch(txnRoutine)) {}
+    }
 
-	template <typename TKey, typename TValue>
-	bool TransactionDispatcher<TKey, TValue>::TryDispatch(const TransactionRoutine& txnRoutine)
-	{
-		try
-		{
-			TRACE_INF("[Dispatcher]: Begin.");
+    template <typename TKey, typename TValue>
+    bool TransactionDispatcher<TKey, TValue>::TryDispatch(const TransactionRoutine& txnRoutine)
+    {
+        try
+        {
+            TRACE_INF("[Dispatcher]: Begin.");
 
-			Transaction::Begin();
+            Transaction::Begin();
 
-			TRACE_VRB("[Dispatcher]: Execute.");
+            TRACE_VRB("[Dispatcher]: Execute.");
 
-			txnRoutine();
+            txnRoutine();
 
-			TRACE_INF("[Dispatcher]: Commit.");
+            TRACE_INF("[Dispatcher]: Commit.");
 
-			Transaction::Commit();
+            Transaction::Commit();
 
-			TRACE_INF("[Dispatcher]: Done. (OK)");
+            TRACE_INF("[Dispatcher]: Done. (OK)");
 
-			return true;
-		}
-		catch (const Infra::TransactionException&)
-		{
-			TRACE_INF("[Dispatcher]: Rollback.");
+            return true;
+        }
+        catch (const Infra::TransactionException&)
+        {
+            TRACE_INF("[Dispatcher]: Rollback.");
 
-			Transaction::Rollback();
+            Transaction::Rollback();
 
-			TRACE_INF("[Dispatcher]: Done. (ABORT)");
+            TRACE_INF("[Dispatcher]: Done. (ABORT)");
 
-			return false;
-		}
-		catch (...)
-		{
-			TRACE_ERR("[Dispatcher]: Rollback.");
+            return false;
+        }
+        catch (...)
+        {
+            TRACE_ERR("[Dispatcher]: Rollback.");
 
-			Transaction::Rollback();
+            Transaction::Rollback();
 
-			TRACE_ERR("[Dispatcher]: Done. (FAULT)");
+            TRACE_ERR("[Dispatcher]: Done. (FAULT)");
 
-			throw;
-		}
-	}
+            throw;
+        }
+    }
 }

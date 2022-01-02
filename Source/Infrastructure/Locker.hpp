@@ -10,7 +10,7 @@
 //
 //   Abstract:
 //
-//		| RAII over a possession scope of synchronization objects. |
+//      | RAII over a possession scope of synchronization objects. |
 //
 //   Author:
 //
@@ -18,7 +18,7 @@
 //
 //   Environment:
 //
-//		| User Mode |
+//      | User Mode |
 //
 /////////////////////////////////////////////////////////////////
 
@@ -27,25 +27,25 @@
 
 namespace Tixel::Infra
 {
-	class Locker final : public NonCopyable
-	{
-		public:
-			enum class Policy
-			{
-				TryLock,
-				ForceLock
-			};
+    class Locker final : public NonCopyable
+    {
+        public:
+            enum class Policy
+            {
+                TryLock,
+                ForceLock
+            };
 
-		public:
-			explicit Locker(LockBase& lockObject);
-			explicit Locker(LockBase& lockObject, const Policy& lockPolicy);
-			virtual ~Locker();
+        public:
+            explicit Locker(LockBase& lockObject);
+            explicit Locker(LockBase& lockObject, const Policy& lockPolicy);
+            virtual ~Locker();
 
-		public:
-			bool IsAcquired() const;
+        public:
+            bool IsAcquired() const;
 
-		private:
-			LockBase& _lockObject;
-			bool _isLocked;
-	};
+        private:
+            LockBase& _lockObject;
+            bool _isLocked;
+    };
 }

@@ -14,7 +14,7 @@
 //
 //   Environment:
 //
-//		| User Mode |
+//      | User Mode |
 //
 /////////////////////////////////////////////////////////////////
 
@@ -30,28 +30,28 @@ namespace Tixel::Adt
     template <typename TKey, typename TValue>
     class Index final : public Infra::NonCopyable
     {
-		public:
+        public:
             explicit Index() = default;
             virtual ~Index() = default;
 
-	    public:
-	        using NodeKey = IndexKey<TKey>;
-	        using Node = IndexNode<TKey, TValue>;
+        public:
+            using NodeKey = IndexKey<TKey>;
+            using Node = IndexNode<TKey, TValue>;
             using NodeGuard = typename Node::Guard;
 
-		public:
+        public:
             void Insert(NodeGuard& node);
             void Remove(const NodeGuard& node);
             void Insert(NodeKey& key, NodeGuard& node);
             std::pair<NodeKey, NodeGuard> GetPrevious(const TKey& key);
 
-		public:
+        public:
             void Print();
             bool Empty() const;
             uint64_t Sum() const;
             uint64_t Size() const;
 
-	    private:
+        private:
             mutable sl_map<NodeKey, NodeGuard> _skipListMap;
     };
 
@@ -118,7 +118,7 @@ namespace Tixel::Adt
     {
         std::ostringstream os;
 
-    	for (auto& entry : _skipListMap)
+        for (auto& entry : _skipListMap)
         {
             if (!entry.first.IsSentinel())
             {

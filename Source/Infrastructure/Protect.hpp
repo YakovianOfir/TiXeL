@@ -10,8 +10,8 @@
 //
 //   Abstract:
 //
-//		| This module provides a standard facility to ensure that
-//		| destructor code doesn't throw any exceptions.
+//      | This module provides a standard facility to ensure that
+//      | destructor code doesn't throw any exceptions.
 //
 //   Author:
 //
@@ -19,7 +19,7 @@
 //
 //   Environment:
 //
-//		| User Mode |
+//      | User Mode |
 //
 /////////////////////////////////////////////////////////////////
 

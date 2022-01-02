@@ -14,7 +14,7 @@
 //
 //   Environment:
 //
-//		| User Mode |
+//      | User Mode |
 //
 /////////////////////////////////////////////////////////////////
 
@@ -22,5 +22,5 @@
 
 namespace Tixel::Txn
 {
-	using TransactionRoutine = std::function<void()>;
+    using TransactionRoutine = std::function<void()>;
 }

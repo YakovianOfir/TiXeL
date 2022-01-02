@@ -14,7 +14,7 @@
 //
 //   Environment:
 //
-//		| User Mode |
+//      | User Mode |
 //
 /////////////////////////////////////////////////////////////////
 
@@ -24,21 +24,21 @@
 namespace Tixel::Txn
 {
     class GlobalVersionClock final : public Infra::NonCopyable
-	{
-		public:
-    		using Version = uint64_t;
+    {
+        public:
+            using Version = uint64_t;
 
-	    private:
-	        explicit GlobalVersionClock();
+        private:
+            explicit GlobalVersionClock();
 
-	    private:
-	        static GlobalVersionClock& Instance();
+        private:
+            static GlobalVersionClock& Instance();
 
-		public:
-			static Version Read();
-			static Version AddAndFetch();
+        public:
+            static Version Read();
+            static Version AddAndFetch();
 
-	    private:
-	        std::atomic<Version> _gvc;
+        private:
+            std::atomic<Version> _gvc;
     };
 }

@@ -3,10 +3,8 @@
 
 namespace Tixel::Infra
 {
-
-void LockBase::Acquire()
-{
-	ROLLBACK_TXN(TryAcquire(), "Cannot acquire lock object.");
-}
-
+    void LockBase::Acquire()
+    {
+        ROLLBACK_TXN(TryAcquire(), "Cannot acquire lock object.");
+    }
 }

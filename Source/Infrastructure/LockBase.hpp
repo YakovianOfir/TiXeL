@@ -10,7 +10,7 @@
 //
 //   Abstract:
 //
-//		| Fundamental abstract class of an ILock object. |
+//      | Fundamental abstract class of an ILock object. |
 //
 //   Author:
 //
@@ -18,7 +18,7 @@
 //
 //   Environment:
 //
-//		| User Mode |
+//      | User Mode |
 //
 /////////////////////////////////////////////////////////////////
 
@@ -26,9 +26,9 @@
 
 namespace Tixel::Infra
 {
-	class LockBase : public ILock
-	{
-		public:
-			void Acquire() override;
-	};
+    class LockBase : public ILock
+    {
+        public:
+            void Acquire() override;
+    };
 }

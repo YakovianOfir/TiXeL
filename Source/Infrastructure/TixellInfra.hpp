@@ -10,7 +10,7 @@
 //
 //   Abstract:
 //
-//		| Baseline of the C++ TiXeL ecosystem.
+//      | Baseline of the C++ TiXeL ecosystem.
 //
 //   Author:
 //
@@ -18,7 +18,7 @@
 //
 //   Environment:
 //
-//		| User Mode |
+//      | User Mode |
 //
 /////////////////////////////////////////////////////////////////
 
