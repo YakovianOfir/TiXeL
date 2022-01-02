@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="GlobalVersionClock.hpp">
+      <Filter>Header Files\Versioning</Filter>
+    </ClInclude>
+    <ClInclude Include="TransactionDispatcher.hpp">
+      <Filter>Header Files\Transaction</Filter>
+    </ClInclude>
+    <ClInclude Include="TransactionRoutine.hpp">
+      <Filter>Header Files\Transaction</Filter>
+    </ClInclude>
+    <ClInclude Include="TixelTxn.hpp">
+      <Filter>Header Files\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="TxnList.hpp">
+      <Filter>Header Files\List</Filter>
+    </ClInclude>
+    <ClInclude Include="TxnListStorage.hpp">
+      <Filter>Header Files\List</Filter>
+    </ClInclude>
+    <ClInclude Include="TxnListTransaction.hpp">
+      <Filter>Header Files\List</Filter>
+    </ClInclude>
+    <ClInclude Include="TxnListOperator.hpp">
+      <Filter>Header Files\Operators</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleListOperator.hpp">
+      <Filter>Header Files\Operators</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{d725063c-27dc-4320-a8f5-6c573afdf3cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{f21654ea-2029-4122-b9a4-4f276f6a98de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{f9659e63-8926-40ae-a690-56375ad976be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Transaction">
+      <UniqueIdentifier>{a39074c3-7cdc-44cb-b8ce-745821de2a42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Interface">
+      <UniqueIdentifier>{8267b372-de52-413b-9914-66ad458e92fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Versioning">
+      <UniqueIdentifier>{14facb4e-4ace-4fac-9790-0bf6c0df043b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Versioning">
+      <UniqueIdentifier>{bc668733-e207-43a4-b9e7-1e038b0b8dc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\List">
+      <UniqueIdentifier>{5970fae7-c065-4aac-aa17-b7859c8d5b2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Operators">
+      <UniqueIdentifier>{caca4fae-688b-444d-a245-97f39a1b3fa3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Packages.config">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GlobalVersionClock.cpp">
+      <Filter>Source Files\Versioning</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
