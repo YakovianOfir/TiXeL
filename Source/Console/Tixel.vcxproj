@@ -40,6 +40,7 @@
     <ProjectGuid>{a073b920-51e6-4c98-8cde-5781ddbecd78}</ProjectGuid>
     <RootNamespace>TiXeL</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>TixelConsole</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)'=='Debug'" Label="Configuration">
@@ -64,9 +65,6 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup>
-    <TargetName>Mnap$(ProjectName)</TargetName>
-  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
     <ClCompile>
       <WarningLevel>Level4</WarningLevel>
@@ -103,27 +101,33 @@
     <ClCompile Include="TixelMain.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="Packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataTypes\TixelAdt.vcxproj">
+      <Project>{82715ea3-44eb-4428-a47d-d0264e13ccc3}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\Infrastructure\TixelInfra.vcxproj">
       <Project>{53e9d027-7f68-4e67-9165-88c04a0828fb}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Transactions\TixelTxn.vcxproj">
+      <Project>{f02dadea-0f2a-406a-b93d-1e45738c5b93}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="$(SolutionDir)\packages\fmt.7.0.1\build\fmt.targets" Condition="Exists('$(SolutionDir)\packages\fmt.7.0.1\build\fmt.targets')" />
-    <Import Project="$(SolutionDir)\packages\spdlog.native.1.0.0\build\native\spdlog.native.targets" Condition="Exists('$(SolutionDir)\packages\spdlog.native.1.0.0\build\native\spdlog.native.targets')" />
-    <Import Project="$(SolutionDir)\packages\boost.1.77.0.0\build\boost.targets" Condition="Exists('$(SolutionDir)\packages\boost.1.77.0.0\build\boost.targets')" />
-    <Import Project="$(SolutionDir)\packages\boost_program_options-vc142.1.77.0.0\build\boost_program_options-vc142.targets" Condition="Exists('$(SolutionDir)\packages\boost_program_options-vc142.1.77.0.0\build\boost_program_options-vc142.targets')" />
+    <Import Project="$(SolutionDir)\Packages\fmt.7.0.1\build\fmt.targets" Condition="Exists('$(SolutionDir)\Packages\fmt.7.0.1\build\fmt.targets')" />
+    <Import Project="$(SolutionDir)\Packages\spdlog.native.1.0.0\build\native\spdlog.native.targets" Condition="Exists('$(SolutionDir)\Packages\spdlog.native.1.0.0\build\native\spdlog.native.targets')" />
+    <Import Project="$(SolutionDir)\Packages\boost.1.77.0.0\build\boost.targets" Condition="Exists('$(SolutionDir)\Packages\boost.1.77.0.0\build\boost.targets')" />
+    <Import Project="$(SolutionDir)\Packages\boost_program_options-vc142.1.77.0.0\build\boost_program_options-vc142.targets" Condition="Exists('$(SolutionDir)\Packages\boost_program_options-vc142.1.77.0.0\build\boost_program_options-vc142.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them. For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)\packages\fmt.7.0.1\build\fmt.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\fmt.7.0.1\build\fmt.targets'))" />
-    <Error Condition="!Exists('$(SolutionDir)\packages\spdlog.native.1.0.0\build\native\spdlog.native.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\spdlog.native.1.0.0\build\native\spdlog.native.targets'))" />
-    <Error Condition="!Exists('$(SolutionDir)\packages\boost.1.77.0.0\build\boost.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\boost.1.77.0.0\build\boost.targets'))" />
-    <Error Condition="!Exists('$(SolutionDir)\packages\boost_program_options-vc142.1.77.0.0\build\boost_program_options-vc142.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\packages\boost_program_options-vc142.1.77.0.0\build\boost_program_options-vc142.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\Packages\fmt.7.0.1\build\fmt.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\Packages\fmt.7.0.1\build\fmt.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\Packages\spdlog.native.1.0.0\build\native\spdlog.native.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\Packages\spdlog.native.1.0.0\build\native\spdlog.native.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\Packages\boost.1.77.0.0\build\boost.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\Packages\boost.1.77.0.0\build\boost.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\Packages\boost_program_options-vc142.1.77.0.0\build\boost_program_options-vc142.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\Packages\boost_program_options-vc142.1.77.0.0\build\boost_program_options-vc142.targets'))" />
   </Target>
 </Project>
