@@ -13,7 +13,7 @@ To clone properly, run the following commands:
 ```
 $ git clone https://github.com/ofirkov/TiXeL.git
 $ cd TiXeL
-$ git submodule update --recursive --remote
+$ git submodule update --recursive
 ```
 
 ### Build
