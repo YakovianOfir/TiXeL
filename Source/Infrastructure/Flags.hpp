@@ -14,13 +14,13 @@
 //
 //   Environment:
 //
-//		| User Mode |
+//      | User Mode |
 //
 /////////////////////////////////////////////////////////////////
 
 namespace Tixel::Infra
 {
-	template <typename TValue>
+    template <typename TValue>
     constexpr bool IsFlagSet(TValue value, TValue flagValue)
     {
         return (value & flagValue) != 0;
