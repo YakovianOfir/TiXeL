@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{31deec4b-d538-4820-b660-de47589821f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{5f02138c-8ec0-43d0-9717-c4b1afd9e12f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{9ceb8505-a63a-4483-ae25-62323d1f8988}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\List">
+      <UniqueIdentifier>{87f9d155-009e-4339-a4ba-79b2b7f46e44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SkipList">
+      <UniqueIdentifier>{4756366b-6878-4d0f-8708-6c197a067600}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SkipList">
+      <UniqueIdentifier>{78bc0630-3dab-490a-b913-305213e137fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Index">
+      <UniqueIdentifier>{90af2c95-19fe-47f8-b8d1-923ac139d7e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Interface">
+      <UniqueIdentifier>{39efeee2-a9c2-43bd-8fb5-c18e22191e11}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Packages.config">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IList.hpp">
+      <Filter>Header Files\List</Filter>
+    </ClInclude>
+    <ClInclude Include="SkipList.hpp">
+      <Filter>Header Files\SkipList</Filter>
+    </ClInclude>
+    <ClInclude Include="SkipListMap.hpp">
+      <Filter>Header Files\SkipList</Filter>
+    </ClInclude>
+    <ClInclude Include="IndexKey.hpp">
+      <Filter>Header Files\Index</Filter>
+    </ClInclude>
+    <ClInclude Include="IndexNode.hpp">
+      <Filter>Header Files\Index</Filter>
+    </ClInclude>
+    <ClInclude Include="Index.hpp">
+      <Filter>Header Files\Index</Filter>
+    </ClInclude>
+    <ClInclude Include="TixelAdt.hpp">
+      <Filter>Header Files\Interface</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SkipList.cpp">
+      <Filter>Source Files\SkipList</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
