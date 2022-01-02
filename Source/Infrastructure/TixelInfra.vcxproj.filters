@@ -19,14 +19,14 @@
     <Filter Include="Header Files\Synchronization">
       <UniqueIdentifier>{31cefa79-1959-4400-8720-a4b2845b07b5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Platform">
+      <UniqueIdentifier>{352285b2-642b-429c-a86f-8a663988fc9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Flags">
+      <UniqueIdentifier>{ecb30144-4fcd-4f48-b9d5-eefa4fa29086}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\Synchronization">
-      <UniqueIdentifier>{58408823-c76e-4ca2-821a-f74cccb38986}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Transaction">
-      <UniqueIdentifier>{b8e56b2b-066b-444b-8a80-f9cb2d230b5a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Transaction">
-      <UniqueIdentifier>{a8662292-4bfc-4794-8b5a-392f66335279}</UniqueIdentifier>
+      <UniqueIdentifier>{1b3fc498-194e-416c-a763-f8e220b6d196}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -41,19 +41,49 @@
     <ClInclude Include="Trace.hpp">
       <Filter>Header Files\Platform</Filter>
     </ClInclude>
-    <ClInclude Include="TixellInfra.hpp">
-      <Filter>Header Files\Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="GlobalVersionClock.hpp">
-      <Filter>Header Files\Synchronization</Filter>
-    </ClInclude>
     <ClInclude Include="Assert.hpp">
       <Filter>Header Files\Platform</Filter>
     </ClInclude>
+    <ClInclude Include="Exception.hpp">
+      <Filter>Header Files\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="ILock.hpp">
+      <Filter>Header Files\Synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="Locker.hpp">
+      <Filter>Header Files\Synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="LockBase.hpp">
+      <Filter>Header Files\Synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="Protect.hpp">
+      <Filter>Header Files\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="Flags.hpp">
+      <Filter>Header Files\Flags</Filter>
+    </ClInclude>
+    <ClInclude Include="TixellInfra.hpp">
+      <Filter>Header Files\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="VersionLock.hpp">
+      <Filter>Header Files\Synchronization</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GlobalVersionClock.cpp">
+    <ClCompile Include="Exception.cpp">
+      <Filter>Source Files\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="LockBase.cpp">
       <Filter>Source Files\Synchronization</Filter>
+    </ClCompile>
+    <ClCompile Include="Locker.cpp">
+      <Filter>Source Files\Synchronization</Filter>
+    </ClCompile>
+    <ClCompile Include="VersionLock.cpp">
+      <Filter>Source Files\Synchronization</Filter>
+    </ClCompile>
+    <ClCompile Include="Trace.cpp">
+      <Filter>Source Files\Platform</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
