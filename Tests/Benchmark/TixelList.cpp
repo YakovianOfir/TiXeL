@@ -1,5 +1,5 @@
 #include "TixelList.hpp"
-#include "../Transactions/TixelTxn.hpp"
+#include "Transactions/TixelTxn.hpp"
 #include <memory>
 
 intset_l_t *set_new_l()

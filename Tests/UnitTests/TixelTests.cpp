@@ -4,18 +4,18 @@ namespace
 {
     class TixelTests : public ::testing::Test
     {
-	    public:
-		    virtual ~TixelTests() = default;
+        public:
+            virtual ~TixelTests() = default;
 
-	    protected:
+        protected:
             virtual void SetUp() override
             {}
 
             virtual void TearDown() override
             {}
 
-		public:
-		    static void TxnThreadRoutine(const Tixel::Txn::TransactionRoutine& routine)
+        public:
+            static void TxnThreadRoutine(const Tixel::Txn::TransactionRoutine& routine)
             {
                 Tixel::Txn::TransactionDispatcher<int, int>::Dispatch(routine);
             }
@@ -30,13 +30,13 @@ namespace
 
         Tixel::Txn::TransactionDispatcher<int, int>::Dispatch([&]
         {
-    		for (auto i = 0 ; i <= 10; ++i)
-    		{
+            for (auto i = 0; i <= 10; ++i)
+            {
                 txnList->Insert(i, i);
-    		}
+            }
         });
 
-    	// Assert
+        // Assert
 
         ASSERT_EQ(txnList->Sum(), 55);
     }
@@ -61,7 +61,7 @@ namespace
 
         for (auto i = 0; i <= 10; ++i)
         {
-			ASSERT_TRUE(txnList->Contains(i));
+            ASSERT_TRUE(txnList->Contains(i));
         }
     }
 

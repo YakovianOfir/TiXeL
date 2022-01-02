@@ -35,11 +35,10 @@ int set_contains_l(intset_l_t *set, val_t val, bool transactional)
 	{
 		return Tixel::Txn::TransactionDispatcher<int, int>::TryDispatch(contains);
 	}
-	else
-	{
-		contains();
-		return true;
-	}
+
+    contains();
+
+    return true;
 }
 
 int set_add_l(intset_l_t *set, val_t val, bool transactional)
@@ -52,11 +51,10 @@ int set_add_l(intset_l_t *set, val_t val, bool transactional)
 	{
 		return Tixel::Txn::TransactionDispatcher<int, int>::TryDispatch(insert);
 	}
-	else
-	{
-		insert();
-		return true;
-	}
+
+    insert();
+
+    return true;
 }
 
 int set_remove_l(intset_l_t *set, val_t val, bool transactional)
@@ -69,9 +67,8 @@ int set_remove_l(intset_l_t *set, val_t val, bool transactional)
 	{
 		return Tixel::Txn::TransactionDispatcher<int, int>::TryDispatch(remove);
 	}
-	else
-	{
-		remove();
-		return true;
-	}
+
+    remove();
+
+    return true;
 }

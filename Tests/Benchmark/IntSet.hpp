@@ -21,8 +21,8 @@
  * GNU General Public License for more details.
  */
 
-#include "../TixelList.hpp"
-#include "../../Transactions/TixelTxn.hpp"
+#include "TixelList.hpp"
+#include "Transactions/TixelTxn.hpp"
 
 #ifdef __cplusplus
 extern "C"
