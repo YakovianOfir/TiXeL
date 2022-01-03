@@ -1,3 +1,5 @@
+#pragma once
+
 /*
  * File:
  *   intset.c
@@ -22,7 +24,6 @@
  */
 
 #include "TixelList.hpp"
-#include "Transactions/TixelTxn.hpp"
 
 #ifdef __cplusplus
 extern "C"

@@ -22,7 +22,7 @@
  */
 
 #include "IntSet.hpp"
-#include "Transactions/TixelTxn.hpp"
+#include "../../Source/Transactions/TixelTxn.hpp"
 #include <memory>
 
 int set_contains_l(intset_l_t *set, val_t val, bool transactional)

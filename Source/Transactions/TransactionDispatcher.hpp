@@ -38,8 +38,6 @@ namespace Tixel::Txn
 
         public:
             static void Dispatch(const TransactionRoutine& txnRoutine);
-
-        private:
             static bool TryDispatch(const TransactionRoutine& txnRoutine);
     };
 

@@ -78,20 +78,8 @@ namespace Tixel::Infra
     }
 }
 
-#ifdef _DEBUG
-
 #define TRACE_INF(__Format, ...) Tixel::Infra::TraceMessage(Tixel::Infra::TraceLevel::Information, __FUNCTION__, __Format, ##__VA_ARGS__)
 #define TRACE_ERR(__Format, ...) Tixel::Infra::TraceMessage(Tixel::Infra::TraceLevel::Error, __FUNCTION__, __Format, ##__VA_ARGS__)
 #define TRACE_WRN(__Format, ...) Tixel::Infra::TraceMessage(Tixel::Infra::TraceLevel::Warning, __FUNCTION__, __Format, ##__VA_ARGS__)
 #define TRACE_VRB(__Format, ...) Tixel::Infra::TraceMessage(Tixel::Infra::TraceLevel::Verbose, __FUNCTION__, __Format, ##__VA_ARGS__)
 #define DEBUG_ONLY(__Expression) __Expression
-
-#else
-
-#define TRACE_INF(__Format, ...) ((void)(0))
-#define TRACE_ERR(__Format, ...) ((void)(0))
-#define TRACE_WRN(__Format, ...) ((void)(0))
-#define TRACE_VRB(__Format, ...) ((void)(0))
-#define DEBUG_ONLY(__Expression)
-
-#endif

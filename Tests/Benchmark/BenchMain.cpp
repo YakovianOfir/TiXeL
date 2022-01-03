@@ -21,10 +21,10 @@
  * GNU General Public License for more details.
  */
 
-#include "Infrastructure/TixellInfra.hpp"
-#include "Transactions/TixelTxn.hpp"
-#include "DataTypes/TixelAdt.hpp"
-#include "SynchroBench/IntSet.hpp"
+#include "../../Source/Infrastructure/TixellInfra.hpp"
+#include "../../Source/Transactions/TixelTxn.hpp"
+#include "../../Source/DataTypes/TixelAdt.hpp"
+#include "IntSet.hpp"
 
 typedef struct barrier {
     pthread_cond_t complete;
@@ -280,7 +280,7 @@ int main(int argc, char** argv)
                 "Options:\n"
                 "  -h, --help\n"
                 "        Print this message\n"
-                "  -A, --alternate (default="XSTR(DEFAULT_ALTERNATE)")\n"
+                "  -A, --alternate (default=\"0\")\n"
                 "        Consecutive insert/remove target the same value\n"
                 "  -f, --effective <int>\n"
                 "        update txs must effectively write (0=trial, 1=effective, default=" XSTR(DEFAULT_EFFECTIVE) ")\n"
@@ -363,7 +363,7 @@ int main(int argc, char** argv)
         (int)sizeof(int),
         (int)sizeof(long),
         (int)sizeof(void*),
-        (int)sizeof(uintptr_t));
+        (int)sizeof(size_t));
 
     timeout.tv_sec = duration / 1000;
     timeout.tv_nsec = (duration % 1000) * 1000000;
@@ -451,7 +451,6 @@ int main(int argc, char** argv)
         sigemptyset(&block_set);
         sigsuspend(&block_set);
     }
-    AO_store_full(&stop, 1);
     gettimeofday(&end, NULL);
     printf("STOPPING...\n");
 

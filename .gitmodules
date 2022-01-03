@@ -10,3 +10,6 @@
 [submodule "References/SynchroBench"]
 	path = References/SynchroBench
 	url = https://github.com/gramoli/synchrobench.git
+[submodule "References/TDSL"]
+	path = References/TDSL
+	url = https://github.com/HagarMeir/transactionLib.git

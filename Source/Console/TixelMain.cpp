@@ -22,7 +22,7 @@ int wmain(const int argc, wchar_t const* const argv[])
 {
     try
     {
-        Tixel::Infra::CHECK_CMDLINE(argc == 2, "Usage: Tixel <Thread-Count> <Troubleshoot:0|1>");
+        Tixel::Infra::CHECK_CMDLINE(argc == 3, fmt::format("Usage: {} <Thread-Count> <Troubleshoot-Mode 0|1>", argv[0]));
 
         if (std::stoi(argv[2]) == 1)
         {
